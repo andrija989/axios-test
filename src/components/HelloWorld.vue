@@ -27,15 +27,18 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <div> {{ user }}</div>
   </div>
 </template>
 
 <script>
 //import axios from 'axios'
 import { userService } from '@/services/user-service'
+import {mixin1,mixin2,mixin3} from '@/mixins/mixin'
 
 export default {
   name: 'HelloWorld',
+  mixins:[mixin1,mixin2,mixin3],
   props: {
     msg: String
   },
@@ -47,25 +50,27 @@ export default {
   },
 
  created () {
-    userService.getUsers()
-      .then(response => {
-        console.log(response)
-      }).catch(e => {
-        console.log(e)
-      })
-    //axios.get(`http://jsonplaceholder.typicode.com/posts`)
-     // .then(response => {
-     //   console.log(response)
-     //   this.posts = response.data;
-     // }).catch(e => {
-     //   this.errors.push(e)
-     // })
-    userService.getUserPosts()
-      .then(response => {
-        console.log(response)
-      }).catch(e => {
-        console.log(e)
-      })
+   this.user = "Dragana"
+   this.getUserName()
+//     userService.getUsers()
+//       .then(response => {
+//         console.log(response)
+//       }).catch(e => {
+//         console.log(e)
+//       })
+//     //axios.get(`http://jsonplaceholder.typicode.com/posts`)
+//      // .then(response => {
+//      //   console.log(response)
+//      //   this.posts = response.data;
+//      // }).catch(e => {
+//      //   this.errors.push(e)
+//      // })
+//     userService.getUserPosts()
+//       .then(response => {
+//         console.log(response)
+//       }).catch(e => {
+//         console.log(e)
+//       })
 
 
       
