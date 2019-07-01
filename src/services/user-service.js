@@ -10,7 +10,7 @@ export default class UserService {
     }
 
     getUserPosts() {
-        return axios.get('/posts')
+        return axios.get('posts')
     }
 }
 

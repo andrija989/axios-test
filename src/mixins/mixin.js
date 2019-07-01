@@ -22,7 +22,7 @@ export const mixin2 = {
     },
     methods: {
         getUserName() {
-            alert('Vanja Bijalkovic')
+            
         }
     }
 }
