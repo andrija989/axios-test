@@ -31,10 +31,44 @@
 </template>
 
 <script>
+//import axios from 'axios'
+import { userService } from '@/services/user-service'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      errors:[],
+      posts:[]
+    }
+  },
+
+ created () {
+    userService.getUsers()
+      .then(response => {
+        console.log(response)
+      }).catch(e => {
+        console.log(e)
+      })
+    //axios.get(`http://jsonplaceholder.typicode.com/posts`)
+     // .then(response => {
+     //   console.log(response)
+     //   this.posts = response.data;
+     // }).catch(e => {
+     //   this.errors.push(e)
+     // })
+    userService.getUserPosts()
+      .then(response => {
+        console.log(response)
+      }).catch(e => {
+        console.log(e)
+      })
+
+
+      
   }
 }
 </script>
