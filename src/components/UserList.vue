@@ -3,7 +3,9 @@
     
     <ul>
         <li v-for='(user,index) in users' :key="index">
-            {{ user.name }} - {{ user.email}}
+            <SingleUser 
+            :user = user
+            />
         </li>
     </ul>
 </div>
@@ -11,8 +13,13 @@
 
 <script>
 import { userService } from '@/services/user-service'
+import SingleUser from '@/components/SingleUser'
 
 export default {
+    components: {
+      SingleUser
+    },
+
     data(){
         return {
             users:[],

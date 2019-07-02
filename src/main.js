@@ -4,6 +4,8 @@ import App from './App.vue'
 
 import PostList from '@/components/PostList'
 import UserList from '@/components/UserList'
+import SingleUser from '@/components/SingleUser'
+import AppUser from '@/components/AppUser'
 
 Vue.config.productionTip = false
 
@@ -11,7 +13,9 @@ Vue.use(VueRouter)
 
 const routes = [
   { path:'/posts', component:PostList},
-  { path:'/users', component:UserList}
+  { path:'/users/:id', component:AppUser},
+  { path:'/users', component:UserList},
+  
 ]
 
 const router = new VueRouter({

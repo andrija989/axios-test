@@ -12,6 +12,11 @@ export default class UserService {
     getUserPosts() {
         return axios.get('posts')
     }
+    
+    find(id) {
+        return this.getUsers().find(users => user.id == id);
+      }
 }
 
 export const userService = new UserService()
+

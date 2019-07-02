@@ -35,3 +35,16 @@ export const mixin3 = {
         console.log('Called from mounted')
     }
 }
+
+export const dataMixin = {
+    data() {
+        return {
+            date: new Date()
+        }
+    },
+    methods: {
+        getFormatedDate() {
+            return new Intl.DateTimeFormat().format(this.date);
+        }
+    },
+}

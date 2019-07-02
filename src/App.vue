@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{date}}</p>
+    <div>{{ getFormatedDate() }}</div>
     <nav>
       <router-link to="/posts">Posts </router-link>
       <router-link to="/users">Users </router-link>
@@ -10,9 +10,11 @@
 </template>
 
 <script>
+import { dataMixin } from  '@/mixins/mixin'
 
 
 export default {
+  mixins: [dataMixin],
    data() {
      return {
        date: new Date()
